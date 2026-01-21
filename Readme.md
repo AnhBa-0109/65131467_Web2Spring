@@ -1,6 +1,4 @@
-# 🌐 Bài Tập Môn Lập Trình Web
-
-![Banner](https://github.com/user-attachments/assets/placeholder-image-id) 
+# 🌐 Bài Tập Môn Phát triển ứng dụng Web 2
 
 ## 📌 Thông tin sinh viên
 - **Họ và tên:** [Nguyễn Quốc Khánh]
@@ -8,3 +6,4 @@
 - **Lớp:** [65CNTT-CLC]
 - **Giảng viên hướng dẫn:** [ThS.Mai Cường Thọ]
 - **Học kỳ:** [I - Năm học 2025-2026]
+
