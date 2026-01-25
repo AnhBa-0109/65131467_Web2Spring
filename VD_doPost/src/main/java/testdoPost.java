@@ -6,36 +6,27 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-/**
- * Servlet implementation class testdoPost
- */
 @WebServlet("/testdoPost")
 public class testdoPost extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public testdoPost() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+			response.setContentType("text/html");
+			response.setCharacterEncoding("utf-8");
+			PrintWriter traVe = response.getWriter();
+			
+			traVe.append("Ban vua gui yeu cau dang GET, day la dap ung cua toi");
+			String noiDungHTML = "<form method = POST action = \"/ViDuHelloWorldServlet/testdoPost\""
+						+ 		"	<label>Ho: </label>"
+						+ 		"<input type=\"text\" name=\"fname\" ><br>\r\n"
+						+ 		"<label>Ten: </label>"
+						+ 		"<input type=\"text\" name=\"lname\"><br>"
+						+ 		"<input type=\"submit\" value=\"Gui di\">"
+						+ "</form>";
+			traVe.append(noiDungHTML);
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
 	}
 
 }
