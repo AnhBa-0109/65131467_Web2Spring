@@ -15,18 +15,26 @@ public class testdoPost extends HttpServlet {
 			response.setCharacterEncoding("utf-8");
 			PrintWriter traVe = response.getWriter();
 			
-			traVe.append("Ban vua gui yeu cau dang GET, day la dap ung cua toi");
-			String noiDungHTML = "<form method = POST action = \"/ViDuHelloWorldServlet/testdoPost\""
+			traVe.append("Bạn vừa gửi yêu cầu dạng GET, đây là đáp ứng của tôi");
+			String noiDungHTML = "<form method = POST action = \"/VD_doPost/testdoPost\""
 						+ 		"	<label>Ho: </label>"
 						+ 		"<input type=\"text\" name=\"fname\" ><br>\r\n"
 						+ 		"<label>Ten: </label>"
 						+ 		"<input type=\"text\" name=\"lname\"><br>"
-						+ 		"<input type=\"submit\" value=\"Gui di\">"
+						+ 		"<input type=\"submit\" value=\"Gửi đi\">"
 						+ "</form>";
 			traVe.append(noiDungHTML);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		response.setContentType("text/html");
+		response.setCharacterEncoding("utf-8");
 		
+		String value1 = request.getParameter("fname");
+		String value2 = request.getParameter("lname");
+		
+		PrintWriter traVe = response.getWriter();
+		traVe.append("Bạn vừa gửi yêu cầu dạng POST, đây là đáp ứng của tôi").append("<br>");
+		traVe.append("\nGiá trị tham số fname = ").append(value1).append("<br>");
+		traVe.append("\nGiá trị tham số lname = ").append(value2);
 	}
-
 }
