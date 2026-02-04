@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+    		justify-content: center;
+    		align-items: center;
+    		margin: 0;
+    		height: 100vh;
+        }
+
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #ddd;
+            border: 1px solid #999;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+        
+        button:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="Login.jsp" method="POST">
+        <h3 style="text-align: center;">Đăng Nhập</h3>
+
+        <label>Tên Đăng Nhập</label>
+        <input type="text" name="tenDN">
+        
+        <label>Mật khẩu</label>
+        <input type="password" name="mk"> <button type="submit">Đăng nhập</button>
+    </form>
+
+</body>
+</html>
