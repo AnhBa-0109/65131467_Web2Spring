@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Đăng nhập</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#175de8",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative">
+    
+    <div class="fixed inset-0 z-0 opacity-40 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, #175de8 1px, transparent 0); background-size: 40px 40px;">
+    </div>
+
+    <div class="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-12 w-full">
+        
+        <div class="w-full max-w-md bg-white dark:bg-slate-900 rounded-xl shadow-lg p-8 border border-slate-100 dark:border-slate-800">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white text-center mb-6">Đăng nhập</h2>
+            
+            <form action="Login.jsp" class="space-y-5" method="POST">
+                <div class="flex flex-col gap-1.5">
+                    <label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="email">Email Address</label>
+                    <div class="relative">
+                        <input class="block w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" id="email" name="email" placeholder="name@company.com" required="" type="email"/>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col gap-1.5">
+                    <div class="flex items-center justify-between">
+                        <label class="text-sm font-medium text-slate-700 dark:text-slate-300" for="password">Password</label>
+                    </div>
+                    <div class="relative flex items-center">
+                        <input class="block w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+                    </div>
+                </div>
+
+                <button class="w-full flex items-center justify-center px-4 py-3 border border-transparent text-base font-semibold rounded-lg text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors shadow-sm mt-2" type="submit">
+                    Sign In
+                </button>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>
