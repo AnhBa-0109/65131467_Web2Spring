@@ -1,12 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 <%
 	String yearStr = request.getParameter("year");
 	
@@ -29,6 +22,3 @@
 	    out.print("error|Vui lòng nhập một năm sinh hợp lệ (ví dụ: 2004)!");
 	}
 %>
-
-</body>
-</html>
