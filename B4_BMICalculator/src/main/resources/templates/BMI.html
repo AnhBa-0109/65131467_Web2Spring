@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/" method="post">
+		<input type="text" name="cao" placeholder="Nhập chiều cao(m)"/>
+		<input type="text" name="nang" placeholder="Nhập cân nặng(kg)"/>
+		<input type="submit"/>
+	</form>
+	
+	<h1 th:text="|Kết quả: ${#numbers.formatDecimal(ketqua,1,1)} - ${ketqua2}|"></h1>
+</body>
+</html>
