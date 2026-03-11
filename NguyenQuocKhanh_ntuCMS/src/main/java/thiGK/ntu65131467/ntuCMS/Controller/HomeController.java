@@ -38,6 +38,15 @@ public class HomeController {
 		return "allPost";
 	}
 	
+	@GetMapping("/page/new")
+	public String addPage()
+	{
+		return "addPage";
+	}
+	
+	
+	
+	
 	@GetMapping("/dashboard")
 	public String openDB()
 	{
