@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>NTU Dashboard</title>
+<title>Insert title here</title>
 <style>
     table {
         margin: auto;
@@ -11,7 +11,7 @@
         width: 80%;
     }
     
-    td {
+    td, th {
         border: 1px solid black;
         padding: 10px;
     }
@@ -74,13 +74,25 @@
                 <a href="#">Post-Addnew</a>
             </td>
             <td class="content-area">
-	            <div>
-	            	<h3>Thông tin sinh viên</h3>
-	                <p>Họ tên: Nguyễn Quốc Khánh</p>
-	                <p>MSSV: 65131467</p>
-	                <p>Lớp: 65.CNTT-CLC</p>
-	            </div>
-            </td>
+		        <table style="width: 100%; border-collapse: collapse;">
+			        <thead>
+			            <tr style="background-color: #ddd;">
+			                <th>ID</th>
+			                <th>Tên Post</th>
+			                <th>Mã danh mục</th>
+			                <th>Thao tác</th>
+			            </tr>
+			        </thead>
+			        <tbody>
+			            <tr th:each="p : ${ListPost}">
+			                <td th:text="${p.id}"></td>
+			                <td th:text="${p.title}"></td>
+			                <td th:text="${p.categoryId}">1</td>
+			                <td><a href="">view</a> <a href="">edit</a> <a href="">delete</a></td>
+			            </tr>
+			        </tbody>
+    			</table>
+    		</td>
         </tr>
 
         <tr>
