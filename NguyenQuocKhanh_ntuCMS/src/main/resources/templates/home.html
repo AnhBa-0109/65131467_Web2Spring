@@ -2,20 +2,92 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>NTU Dashboard</title>
+<style>
+    table {
+        margin: auto;
+        border: 2px solid black;
+        border-collapse: collapse;
+        width: 80%;
+    }
+    
+    td {
+        border: 1px solid black;
+        padding: 10px;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header-container p { margin: 5px 0; }
+
+    .sidebar a {
+        display: block;
+        text-decoration: none;
+        color: black;
+        background-color: #f0f0f0;
+        margin-bottom: 5px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        text-align: center;
+        border-radius: 4px;
+    }
+    .sidebar a:hover {
+        background-color: #ddd; 
+    }
+    .sidebar p { margin: 0; }
+
+    .content-area {
+        background-color: #e0e0e0;
+        vertical-align: top;
+    }
+
+    .footer {
+        text-align: center;
+    }
+</style>
 </head>
-<body >
-	<table style="margin: auto; border: 2px solid black; border-collapse: collapse;">
-	    <tr>
-	        <td colspan="2" style="border: 1px solid black;">hàng thứ nhất</td>
-	    </tr>
-	    <tr>
-	        <td style="border: 1px solid black;">hàng thứ 2 cột 1</td>
-	        <td style="border: 1px solid black;">hàng thứ 2 cột 2</td>
-	    </tr>
-	    <tr>
-	        <td colspan="2" style="border: 1px solid black;">hàng thứ 3</td>
-	    </tr>
-	</table>
+<body>
+    <table>
+        <tr>
+            <td colspan="2">
+                <div class="header-container">
+                    <div>
+                        <p style="color:#395CA3"><strong>Trường Đại Học Nha Trang</strong></p>
+                        <p style="color:#B96155">Khoa Công Nghệ Thông Tin</p>
+                    </div>
+                    <div>
+                        <p><strong>[UserName]</strong></p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="sidebar" style="width: 20%;">
+                <a href="#"><p>Dashboard</p></a>
+                <a href="#"><p>Page-List</p></a>
+                <a href="#"><p>Page-Addnew</p></a>
+                <a href="#"><p>Post-List</p></a>
+                <a href="#"><p>Post-Addnew</p></a>
+            </td>
+            <td class="content-area">
+	            <div>
+	            	<h3>Thông tin sinh viên</h3>
+	                <p>Họ tên: Nguyễn Quốc Khánh</p>
+	                <p>MSSV: 65131467</p>
+	                <p>Lớp: 65.CNTT-CLC</p>
+	            </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" class="footer">
+                2025 by Student Name - NTUCMS
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
