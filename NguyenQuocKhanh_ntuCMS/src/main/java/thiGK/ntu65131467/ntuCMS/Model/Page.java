@@ -5,8 +5,8 @@ public class Page {
 	String pageName;
 	String keyWord;
 	String Content;
-	int parentPageId;
-	public Page(String id, String pageName, String keyWord, String content, int parentPageId) {
+	String parentPageId;
+	public Page(String id, String pageName, String keyWord, String content, String parentPageId) {
 		this.id = id;
 		this.pageName = pageName;
 		this.keyWord = keyWord;
@@ -37,10 +37,10 @@ public class Page {
 	public void setContent(String content) {
 		Content = content;
 	}
-	public int getParentPageId() {
+	public String getParentPageId() {
 		return parentPageId;
 	}
-	public void setParentPageId(int parentPageId) {
+	public void setParentPageId(String parentPageId) {
 		this.parentPageId = parentPageId;
 	}
 	
