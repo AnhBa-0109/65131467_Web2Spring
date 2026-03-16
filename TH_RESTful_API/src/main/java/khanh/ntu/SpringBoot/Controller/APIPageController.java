@@ -2,6 +2,7 @@ package khanh.ntu.SpringBoot.Controller;
 
 import java.util.ArrayList;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,5 +40,19 @@ public class APIPageController {
 				return p;
 		}
 		return null;
+	}
+	
+	@DeleteMapping("/api/pages/del/{id}")
+	public boolean pageDelete(@PathVariable("id") int id)
+	{
+		for(Page p:dsTrang)
+		{
+			if(p.getId() == id)
+			{
+				boolean kq = dsTrang.remove(p);
+				return kq;
+			}
+		}
+		return false;
 	}
 }
