@@ -6,6 +6,8 @@ public class Page {
 	String keyWord;
 	String Content;
 	int parentPageId;
+	public Page() {
+    }
 	public Page(int id, String pageName, String keyWord, String content, int parentPageId) {
 		super();
 		this.id = id;
