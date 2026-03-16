@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import khanh.ntu.SpringBoot.Model.Page;
@@ -63,5 +64,18 @@ public class APIPageController {
 	{
 		boolean kq = dsTrang.add(entity);
 		return kq;
+	}
+	
+	@PutMapping("/api/pages/update/{id}")
+	public boolean pageUpdate(@PathVariable("id") int id, @RequestBody Page entity)
+	{
+		for(Page p:dsTrang)
+		{
+			if(p.getId() == id)
+				dsTrang.remove(p);
+				dsTrang.add(entity);
+				return true;
+		}
+		return false;
 	}
 }
