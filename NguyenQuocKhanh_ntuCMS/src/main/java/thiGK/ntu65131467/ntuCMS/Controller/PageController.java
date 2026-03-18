@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import thiGK.ntu65131467.ntuCMS.Model.Page;
@@ -23,5 +24,10 @@ public class PageController {
 		List<Page> dsTrang = new ArrayList<Page>();
 		dsTrang = pService.getAllPage();
 		return dsTrang;
+	}
+	
+	@GetMapping("restAPI/page/{id}")
+	public Page getPageById(@PathVariable("id") int id) {
+		return pService.getPageByID(id);
 	}
 }

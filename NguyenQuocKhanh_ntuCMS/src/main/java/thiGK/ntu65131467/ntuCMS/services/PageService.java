@@ -17,4 +17,10 @@ public class PageService {
 	public List<Page> getAllPage(){
 		return pRepos.findAll();
 	}
+	
+	public Page getPageByID(int id)
+	{
+		return pRepos.getById(id);
+		//return pRepos.findById(id).orElse(null);
+	}
 }
