@@ -24,7 +24,8 @@ public class Page {
 	
 	@Column(name="parentPageId")
 	int parentPageId;
-
+	
+	public Page() {}
 	public Page(int id, String pageName, String keyWord, String content, int parentPageId) {
 		super();
 		this.id = id;
