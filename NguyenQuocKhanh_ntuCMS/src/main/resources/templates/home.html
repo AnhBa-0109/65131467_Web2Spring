@@ -52,26 +52,13 @@
 <body>
     <table>
         <tr>
-            <td colspan="2">
-                <div class="header-container">
-                    <div>
-                        <p style="color:#395CA3"><strong>Trường Đại Học Nha Trang</strong></p>
-                        <p style="color:#B96155">Khoa Công Nghệ Thông Tin</p>
-                    </div>
-                    <div>
-                        <p><strong>AnhBa mê Nhựa</strong></p>
-                    </div>
-                </div>
+            <td th:replace="header :: header">
+                
             </td>
         </tr>
 
         <tr>
-            <td class="sidebar" style="width: 20%;">
-                <a th:href="@{/dashboard}">Dashboard</a>
-                <a th:href="@{/page/all}">Page-List</a>
-                <a th:href="@{/page/new}">Page-Addnew</a>
-                <a th:href="@{/post/all}">Post-List</a>
-                <a href="#">Post-Addnew</a>
+            <td th:replace="SideBar :: sidebar">
             </td>
             <td class="content-area">
 	            <div>
@@ -84,8 +71,7 @@
         </tr>
 
         <tr>
-            <td colspan="2" class="footer">
-                2025 by Student Name - NTUCMS
+            <td th:replace="footer :: footer">
             </td>
         </tr>
     </table>
