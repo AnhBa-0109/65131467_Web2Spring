@@ -37,13 +37,14 @@ public class PageController {
 		m.addAttribute("ListPage", dsTrang);
 		return "allPage";
 	}
-	
+	//Mở form nhập dữ liệu Page
 	@GetMapping("/page/new")
 	public String openAddNewPage()
 	{
 		return "addPage";
 	}
 	
+	//Kiểm tra dữ liệu trước khi lưu
 	@PostMapping("/savepage")
 	public String addNewPage(
 			@RequestParam("id") int id,
@@ -69,6 +70,21 @@ public class PageController {
 		}
 		
 		pService.addNewPage(id, pageName, keyword, Content, parentPageId);
+		return "redirect:/page/all";
+	}
+	
+	@GetMapping("/page/view/{id}")
+	public String viewPage(@PathVariable("id") int id, ModelMap m)
+	{
+		Page pageDetail = pService.getPageByID(id);
+		m.addAttribute("page", pageDetail);
+		return "viewPage";
+	}
+	
+	@GetMapping("/page/delete/{id}")
+	public String deletePage(@PathVariable("id") int id)
+	{
+		pService.deletePageByID(id);
 		return "redirect:/page/all";
 	}
 }

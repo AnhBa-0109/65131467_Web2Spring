@@ -88,7 +88,7 @@
 			                <td th:text="${p.id}"></td>
 			                <td th:text="${p.pageName}"></td>
 			                <td th:text="${p.parentPageId}">1</td>
-			                <td><a th:href="@{/page/view(id=${p.id})}">view</a> <a href="">edit</a> <a href="">delete</a></td>
+			                <td><a th:href="@{/page/view/{id}(id =${p.id})}">view</a> <a th:href="@{/page/delete/{id}(id =${p.id})}">delete</a></td>
 			            </tr>
 			        </tbody>
     			</table>

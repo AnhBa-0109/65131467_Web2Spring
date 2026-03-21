@@ -23,7 +23,10 @@ public class PageService {
 		return pRepos.getById(id);
 		//return pRepos.findById(id).orElse(null);
 	}
-	
+	public void deletePageByID(int id)
+	{
+		pRepos.deleteById(id);
+	}
 	public void addNewPage(int id, String pageName, String keyword, String content, int parentPageId)
 	{
 		Page newPage = new Page();
