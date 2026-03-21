@@ -23,4 +23,16 @@ public class PageService {
 		return pRepos.getById(id);
 		//return pRepos.findById(id).orElse(null);
 	}
+	
+	public void addNewPage(int id, String pageName, String keyword, String content, int parentPageId)
+	{
+		Page newPage = new Page();
+		newPage.setId(id);
+		newPage.setPageName(pageName);
+		newPage.setKeyWord(keyword);
+		newPage.setContent(content);
+		newPage.setParentPageId(parentPageId);
+		
+		pRepos.save(newPage);
+	}
 }
