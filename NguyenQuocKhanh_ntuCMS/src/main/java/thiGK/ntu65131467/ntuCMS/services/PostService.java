@@ -18,4 +18,14 @@ public class PostService {
 	{
 		return postRepos.findAll();
 	}
+	
+	public void addPost(int id, String title, String content, int categoryId)
+	{
+		Post post = new Post();
+		post.setId(id);
+		post.setTitle(title);
+		post.setContent(content);
+		post.setCategoryId(categoryId);
+		postRepos.save(post);
+	}
 }
