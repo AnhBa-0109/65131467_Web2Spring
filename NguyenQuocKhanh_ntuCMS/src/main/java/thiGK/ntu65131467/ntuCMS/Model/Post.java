@@ -21,7 +21,8 @@ public class Post {
 	
 	@Column(name="categoryid")
 	int categoryId;
-
+	
+	public Post() {};
 	public Post(int id, String title, String content, int categoryId) {
 		this.id = id;
 		this.title = title;
