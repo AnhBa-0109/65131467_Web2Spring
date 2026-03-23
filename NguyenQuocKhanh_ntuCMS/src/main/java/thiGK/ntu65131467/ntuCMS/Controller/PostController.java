@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -49,4 +50,11 @@ public class PostController {
 		return "redirect:/post/all";
 	}
 	
+	@GetMapping("/post/view/{id}")
+	public String viewPostByID(@PathVariable("id") int id, ModelMap m)
+	{
+		Post post = postService.getPostByID(id);
+		m.addAttribute("post", post);
+		return "viewPost";
+	}
 }

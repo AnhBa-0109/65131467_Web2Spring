@@ -74,7 +74,7 @@
 			                <td th:text="${p.id}"></td>
 			                <td th:text="${p.title}"></td>
 			                <td th:text="${p.categoryId}">1</td>
-			                <td><a href="">view</a> <a href="">delete</a></td>
+			                <td><a th:href="@{/post/view/{id}(id =${p.id})}">view</a> <a th:href="@{/post/delete/{id}(id =${p.id})}">delete</a></td>
 			            </tr>
 			        </tbody>
     			</table>

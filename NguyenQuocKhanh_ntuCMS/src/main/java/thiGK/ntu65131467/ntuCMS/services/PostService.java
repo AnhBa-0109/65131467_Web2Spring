@@ -28,4 +28,9 @@ public class PostService {
 		post.setCategoryId(categoryId);
 		postRepos.save(post);
 	}
+	
+	public Post getPostByID(int id)
+	{
+		return postRepos.getById(id);
+	}
 }
