@@ -33,4 +33,9 @@ public class PostService {
 	{
 		return postRepos.getById(id);
 	}
+	
+	public void deletePostByID(int id)
+	{
+		postRepos.deleteById(id);
+	}
 }

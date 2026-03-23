@@ -57,4 +57,11 @@ public class PostController {
 		m.addAttribute("post", post);
 		return "viewPost";
 	}
+	
+	@GetMapping("/post/delete/{id}")
+	public String deletePost(@PathVariable("id") int id)
+	{
+		postService.deletePostByID(id);
+		return "redirect:/post/all";
+	}
 }
