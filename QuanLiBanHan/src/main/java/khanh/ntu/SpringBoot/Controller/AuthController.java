@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import ch.qos.logback.core.model.Model;
 import khanh.ntu.SpringBoot.Model.UserRegistrationDTO;
 import khanh.ntu.SpringBoot.Service.UserService;
 
