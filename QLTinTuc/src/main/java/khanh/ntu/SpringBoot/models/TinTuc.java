@@ -2,7 +2,12 @@ package khanh.ntu.SpringBoot.models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -10,23 +15,25 @@ import jakarta.persistence.Table;
 public class TinTuc {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	int id;
 	
 	@Column(name="name")
 	String name;
 	
-	@Column(name="context")
+	@Column(name="context", columnDefinition = "TEXT")
 	String content;
 	
-	@Column(name="loai")
-	int loaiTT;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="loai")
+	LoaiTinTuc loaiTT;
 
 	public TinTuc() {
 		super();
 	}
 
-	public TinTuc(int id, String name, String content, int loaiTT) {
+	public TinTuc(int id, String name, String content, LoaiTinTuc loaiTT) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -58,11 +65,11 @@ public class TinTuc {
 		this.content = content;
 	}
 
-	public int getLoaiTT() {
+	public LoaiTinTuc getLoaiTT() {
 		return loaiTT;
 	}
 
-	public void setLoaiTT(int loaiTT) {
+	public void setLoaiTT(LoaiTinTuc loaiTT) {
 		this.loaiTT = loaiTT;
 	}
 	
