@@ -22,7 +22,7 @@ public class TinTuc {
 	@Column(name="name")
 	String name;
 	
-	@Column(name="context", columnDefinition = "TEXT")
+	@Column(name="content", columnDefinition = "TEXT")
 	String content;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
