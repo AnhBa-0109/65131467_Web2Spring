@@ -4,10 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import khanh.ntu.SpringBoot.models.LoaiTinTuc;
+import khanh.ntu.SpringBoot.models.TinTuc;
 import khanh.ntu.SpringBoot.service.TinTucService;
 
 @Controller
@@ -25,12 +28,16 @@ public class AdminController {
 	}
 	
 	@PostMapping("/admin/save")
-	public String save(@RequestParam("name") String name,
-						@RequestParam("content") String content,
-						@RequestParam("loaiTT.id") LoaiTinTuc loai
-						,ModelMap m)
+	public String save(@ModelAttribute("tintuc") TinTuc tintuc)
 	{
-		tintucService.saveTinTuc(name, content, loai);
+		tintucService.saveTinTuc(tintuc);
 		return "redirect:/admin";
+	}
+	
+	@GetMapping("/admin/delete/{id}")
+	public String delete(@PathVariable("id") int id)
+	{
+		tintucService.deleteTinTuc(id);
+		return "redirect:/admin"; 
 	}
 }

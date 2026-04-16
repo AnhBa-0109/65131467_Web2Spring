@@ -28,13 +28,17 @@ public class TinTucService {
 	{
 		return loaiRepos.findAll();
 	}
-	public void saveTinTuc(String name, String content, LoaiTinTuc loai)
+	
+	public void saveTinTuc(TinTuc tintuc)
 	{
-		TinTuc tintuc = new TinTuc();
-		tintuc.setName(name);
-		tintuc.setContent(content);
-		tintuc.setLoaiTT(loai);
-		
 		tintucRepos.save(tintuc);
+	}
+	
+	public void deleteTinTuc(int id)
+	{
+		for(TinTuc t : tintucRepos.findAll())
+		{
+			if(t.getId() == id) tintucRepos.delete(t);
+		}
 	}
 }

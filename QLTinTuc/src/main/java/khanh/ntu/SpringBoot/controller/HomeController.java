@@ -13,7 +13,7 @@ public class HomeController {
 	@Autowired
 	TinTucService tintucService;
 	
-	@GetMapping("/allTinTuc")
+	@GetMapping("/home")
 	public String getALL(ModelMap m)
 	{
 		m.addAttribute("dsTinTuc", tintucService.getAllTinTuc());
