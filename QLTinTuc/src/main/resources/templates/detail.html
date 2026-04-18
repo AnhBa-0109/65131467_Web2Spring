@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fafb;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .article-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-back {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+        .btn-back:hover {
+            color: #3730a3;
+            text-decoration: underline;
+        }
+
+        .article-header {
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .article-title {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #111827;
+            margin: 0 0 15px 0;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            font-size: 0.95em;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .meta-item {
+            background-color: #f3f4f6;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+        
+        .meta-label {
+            font-weight: 600;
+            color: #4b5563;
+        }
+
+        .article-content {
+            font-size: 1.125rem;
+            color: #374151;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="article-container">
+        <a th:href="@{/home}" class="btn-back">&larr; Quay lại</a>
+
+        <article>
+            <header class="article-header">
+                <h1 class="article-title" th:text="${page.name}">Tiêu đề trang tin tức</h1>
+                
+                <div class="article-meta">
+                    <span class="meta-item">
+                        <span class="meta-label">ID: </span> 
+                        <span th:text="${page.id}">P01</span>
+                        <span class="meta-label">Loại: </span> 
+                        <span th:text="${page.loaiTT.name}">....</span>
+                    </span>
+                </div>
+            </header>
+
+            <div class="article-content" th:text="${page.content}">
+                Nội dung chi tiết của trang sẽ được hiển thị ở đây...
+            </div>
+        </article>
+    </div>
+
+</body>
+</html>
