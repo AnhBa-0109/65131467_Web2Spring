@@ -40,4 +40,13 @@ public class AdminController {
 		tintucService.deleteTinTuc(id);
 		return "redirect:/admin"; 
 	}
+	
+	@GetMapping("/admin/edit/{id}")
+	public String editTinTuc(@PathVariable("id") int id, ModelMap m)
+	{
+		m.addAttribute("tinTuc", tintucService.getTinTuc(id));
+		m.addAttribute("dsLoai", tintucService.getAllLoai());
+		
+		return "updateTinTuc";
+	}
 }

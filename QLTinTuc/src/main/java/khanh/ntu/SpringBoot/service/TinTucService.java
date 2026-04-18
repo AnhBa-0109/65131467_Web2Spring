@@ -29,6 +29,11 @@ public class TinTucService {
 		return loaiRepos.findAll();
 	}
 	
+	public TinTuc getTinTuc(int id)
+	{
+		return tintucRepos.getById(id);
+	}
+	
 	public void saveTinTuc(TinTuc tintuc)
 	{
 		tintucRepos.save(tintuc);

@@ -14,7 +14,7 @@ public class LoaiTinTuc {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	int id;
+	Integer id;
 	
 	@Column(name="name")
 	String name;
