@@ -39,7 +39,10 @@ public class TinTucService {
 	{
 		tintucRepos.save(tintuc);
 	}
-	
+	public void saveLoai(LoaiTinTuc loai)
+	{
+		loaiRepos.save(loai);
+	}
 	public void deleteTinTuc(int id)
 	{
 		for(TinTuc t : tintucRepos.findAll())

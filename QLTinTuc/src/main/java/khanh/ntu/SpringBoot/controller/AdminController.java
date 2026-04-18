@@ -34,6 +34,12 @@ public class AdminController {
 		return "redirect:/admin";
 	}
 	
+	@PostMapping("/admin/loai/save")
+	public String save(@ModelAttribute("loai") LoaiTinTuc loai)
+	{
+		tintucService.saveLoai(loai);
+		return "redirect:/admin";
+	}
 	@GetMapping("/admin/delete/{id}")
 	public String delete(@PathVariable("id") int id)
 	{
