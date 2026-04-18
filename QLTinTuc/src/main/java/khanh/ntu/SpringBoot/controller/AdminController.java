@@ -40,10 +40,18 @@ public class AdminController {
 		tintucService.saveLoai(loai);
 		return "redirect:/admin";
 	}
+	
 	@GetMapping("/admin/delete/{id}")
 	public String delete(@PathVariable("id") int id)
 	{
 		tintucService.deleteTinTuc(id);
+		return "redirect:/admin"; 
+	}
+	
+	@GetMapping("/admin/loai/delete/{id}")
+	public String delete1(@PathVariable("id") int id)
+	{
+		tintucService.deleteLoai(id);
 		return "redirect:/admin"; 
 	}
 	
