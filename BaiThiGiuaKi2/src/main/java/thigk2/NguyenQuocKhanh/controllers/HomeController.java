@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import thigk2.NguyenQuocKhanh.services.TinService;
 
@@ -20,5 +21,12 @@ public class HomeController {
 		m.addAttribute("listTheLoai", tinService.getAllTheLoai());
 		m.addAttribute("listTin", tinService.getAllTin());
 		return "home";
+	}
+	
+	@GetMapping("/home/tin/{id}")
+	public String viewTin(@PathVariable("id") int id, ModelMap m)
+	{
+		m.addAttribute("tin", tinService.getById(id));
+		return "view";
 	}
 }
