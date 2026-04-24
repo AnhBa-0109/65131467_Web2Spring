@@ -10,11 +10,11 @@
         <div class="col-md-3">
             <h3>Thể loại</h3>
             <div class="list-group">
-                <a href="/" class="list-group-item list-group-item-action">Tất cả</a>
-                <a th:each="tl : ${listTheLoai}" 
+                <p  class="list-group-item list-group-item-action">Tất cả</p>
+                <p th:each="tl : ${listTheLoai}" 
                    th:href="@{'/the-loai/' + ${tl.id}}" 
                    th:text="${tl.ten}" 
-                   class="list-group-item list-group-item-action"></a>
+                   class="list-group-item list-group-item-action"></p>
             </div>
         </div>
 

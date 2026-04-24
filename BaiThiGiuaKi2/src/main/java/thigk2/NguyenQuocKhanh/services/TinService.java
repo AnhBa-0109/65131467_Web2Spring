@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import thigk2.NguyenQuocKhanh.models.TheLoaiTin;
 import thigk2.NguyenQuocKhanh.models.Tin;
+import thigk2.NguyenQuocKhanh.repos.NguoiDungRepository;
 import thigk2.NguyenQuocKhanh.repos.TheLoaiTinRepository;
 import thigk2.NguyenQuocKhanh.repos.TinRepository;
 
@@ -18,6 +19,9 @@ public class TinService {
 	
 	@Autowired
 	TheLoaiTinRepository theloaiRepo;
+	
+	@Autowired
+	NguoiDungRepository userRepo;
 	
 	public List<Tin> getAllTin()
 	{
@@ -33,4 +37,5 @@ public class TinService {
 	{
 		return tinRepo.getReferenceById(id);
 	}
+	
 }

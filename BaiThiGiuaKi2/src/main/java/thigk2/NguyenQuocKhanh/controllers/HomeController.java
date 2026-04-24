@@ -29,4 +29,10 @@ public class HomeController {
 		m.addAttribute("tin", tinService.getById(id));
 		return "view";
 	}
+	
+	@GetMapping("/login")
+	public String login()
+	{
+		return "login";
+	}
 }
